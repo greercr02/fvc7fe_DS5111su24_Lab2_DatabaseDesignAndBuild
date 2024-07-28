@@ -2,31 +2,17 @@ EXECUTIVE SUMMARY
 
 There have been several questions from students, faculty, and staff on the topic of courses and curriculum in the UVA SDS Online MSDS Program. Given your knowledge of database design, you decide it will be helpful to construct a database containing some information about the courses. In particular, these things must be in the database:
 
-1) Learning Outcomes (LOs) for each course
 
-2) The instructors assigned to teach the different courses for each term in 2021 (Spring, Summer, Fall)
-
- 
-
-NOTE ON LEARNING OUTCOMES
-
-LOs capture what students should be able to do after taking a course (e.g., design and build a MySQL database). You will see that the LOs vary in terms of detail (they were written by different instructors). The good news is that someone has collected the LOs and other high-level information about the courses; that data will be provided to you.
-
-NOTE ON INSTRUCTOR ASSIGNMENTS
-
-This data was collected for you, although it will require a little cleanup and organization before database insertion.
-
- 
 
 INSTRUCTIONS
 
 The project is divided into two parts, and you will submit your work separately for each part.
-The first project part involves understanding the problem and uses cases, and designing a relational database to support the needs. The second project part involves database buildout and query construction and testing.  You can use any of several drawing programs to create an Entity Relationship Diagram for the design section.  One such tool is dbdiagram.io, and another popular tool is LucidChart.com
+The first project part involves understanding the problem and uses cases, and designing a relational database to support the needs. The second project part involves database buildout and query construction and testing.  
+You can use any of several drawing programs to create an Entity Relationship Diagram for the design section.  One such tool is dbdiagram.io, and another popular tool is LucidChart.com
 
 
 Data: included in this project package
 
- 
 
 PART 1
 Part 1 of the assignment is to understand the problem and design the database.
@@ -36,23 +22,22 @@ Part 1 Total Points: 20
 
 Design Questions
 
-1) (3 PTS) What tables should you build?
+1) (3 PTS) What tables should you build?  There are a variety of tabs in the excel sheet with tabs having courses, terms, and instructors. There are learning outcomes for each course. With that, we will want to build tables for: Courses, Instructors, Learning Outcomes and CourseAssignments that 
+shows which insructors to teach a course in each term. 
 
-2) (2 PTS) For each table, what field(s) will you use for primary key? 
+2) (2 PTS) For each table, what field(s) will you use for primary key?  For the tables we will use the following primary keys: Courses = course_id; Learning_Outcomes = lo_id; Instructors = insturctor=id; CourseAssisgnments = assignment_id
 
-3) (2 PTS) For each table, what foreign keys will you use?
+3) (2 PTS) For each table, what foreign keys will you use? LearningOutcomes: course_id (references Courses); CourseAssignments: course_id (references Courses), instructor_id (references Instructors)
 
-4) (2 PTS) Learning outcomes, courses, and instructors need a flag to indicate if they are currently active or not. How will your database support this feature? In particular:
+4) (2 PTS) Learning outcomes, courses, and instructors need a flag to indicate if they are currently active or not. How will your database support this feature? In particular: If a course will be taught again, it will be flagged as active. If the course won’t be taught again, it will be flagged as inactive.
 
-If a course will be taught again, it will be flagged as active. If the course won’t be taught again, it will be flagged as inactive.
+It is important to track if an instructor is a current employee or not. Learning outcomes for a course can change. You’ll want to track if a learning outcome is currently active or not.
+Will add an 'active' field to each table. 
 
-It is important to track if an instructor is a current employee or not.
+5) (1 PT) Is there anything to normalize in the database, and if so, how will you normalize it? Recall the desire to eliminate redundancy.  
+Will need to ensure that course infomration is not dublicated across tables. Reference course_id for learning outcomes and instructors course. 
 
-Learning outcomes for a course can change. You’ll want to track if a learning outcome is currently active or not.
-
-5) (1 PT) Is there anything to normalize in the database, and if so, how will you normalize it? Recall the desire to eliminate redundancy.
-
-6) (1 PT) Are there indexes that you should build? Explain your reasoning.
+6) (1 PT) Are there indexes that you should build? Explain your reasoning. Will look at building indexes on foreign keys to improve query performance and indexes on 'active' fields to filter active. 
 
 7) (2 PTS) Are there constraints to enforce? Explain your answer and strategy.
 For example, these actions should not be allowed:
