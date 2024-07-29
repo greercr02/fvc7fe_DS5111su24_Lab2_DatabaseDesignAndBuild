@@ -37,27 +37,36 @@ Will add an 'active' field to each table.
 5) (1 PT) Is there anything to normalize in the database, and if so, how will you normalize it? Recall the desire to eliminate redundancy.  
 Will need to ensure that course infomration is not dublicated across tables. Reference course_id for learning outcomes and instructors course. 
 
-6) (1 PT) Are there indexes that you should build? Explain your reasoning. Will look at building indexes on foreign keys to improve query performance and indexes on 'active' fields to filter active. 
+6) (1 PT) Are there indexes that you should build? Explain your reasoning. 
+Will look at building indexes on foreign keys to improve query performance and indexes on 'active' fields to filter active. 
 
 7) (2 PTS) Are there constraints to enforce? Explain your answer and strategy.
 For example, these actions should not be allowed:
 - Entering learning objectives for a course not offered by the School of Data Science
 - Assigning an invalid instructor to a course
+Yes, key foreign key contraints and ensureing learning outcomes are only entered for valid courses and insturctors. 
 
 8) (5 PTS) Draw and submit a Relational Model for your project. For an example, see Beginning Database Design Solutions page 115 Figure 5-28.
 
-9) (2 PTS) Suppose you were asked if your database could also support the UVA SDS Residential MSDS Program. Explain any issues that might arise, changes to the database structure (schema), and new data that might be needed. Note you won’t actually need to support this use case for the project.
+I will have to reference page 115 Figure 5-28 to draw this.
 
-Aside: Would it have been helpful to know this information before designing this database? You bet! Does this sort of thing happen in real life? Certainly. A good engineer/developer would have addressed this need during the planning stage with the right question: Any other use cases we’d want this database to support?
+9) (2 PTS) Suppose you were asked if your database could also support the UVA SDS Residential MSDS Program. Explain any issues that might arise, changes to the database structure (schema), and new data that might be needed. 
+Note you won’t actually need to support this use case for the project.
+Yes to issues, they could have difference course structures, additional terms or different instructors. Would have to add a field to differentiate between online and residential. 
+
+Aside: Would it have been helpful to know this information before designing this database? You bet! Does this sort of thing happen in real life? Certainly. A
+good engineer/developer would have addressed this need during the planning stage with the right question: Any other use cases we’d want this database to support?
 
 
 
 
 PART 2
-Part 2 of the assignment is to build the database, insert all data, and write SQL queries to answer use case questions. We will be using DBT to insert our initial seed data, and write SQL statement to transform it.  Instead of a database, we will use Snowflake to store the data.
+Part 2 of the assignment is to build the database, insert all data, and write SQL queries to answer use case questions. We will be using DBT to insert our initial seed data, and write SQL statement to transform it.  
+Instead of a database, we will use Snowflake to store the data.
 
 Your submitted file must include:
 1) (6 PTS) Loading the provided data into DBT as seed files
+This is the "Data Build Tool" -- There is DBT cloud and DBT Core. 
 
 2) (14 PTS; broken out below) SQL queries to answer User Case Questions, with resulting output
 
