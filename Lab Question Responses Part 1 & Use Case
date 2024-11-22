@@ -7,8 +7,8 @@ Part 1 Total Points: 20
 Design Questions
 
 ### 1) (3 PTS) What tables should you build?  
-There are a variety of tabs in the excel sheet with tabs having courses, terms, and instructors. There are learning outcomes for each course. With that, we will want to build tables for: Courses, Instructors, Learning Outcomes and CourseAssignments that 
-shows which insructors to teach a course in each term. 
+There are a variety of tabs in the excel sheet with tabs having courses, terms, and instructors. There are learning outcomes for each course. 
+With that, we will want to build tables for: Courses, Instructors, Learning Outcomes and CourseAssignments that shows which insructors to teach a course in each term. 
 
 ### 2) (2 PTS) For each table, what field(s) will you use for primary key?  
 For the tables we will use the following primary keys: Courses = course_id; Learning_Outcomes = lo_id; Instructors = insturctor=id; CourseAssisgnments = assignment_id
