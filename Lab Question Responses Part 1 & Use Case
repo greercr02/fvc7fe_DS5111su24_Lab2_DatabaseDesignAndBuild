@@ -1,19 +1,3 @@
-EXECUTIVE SUMMARY
-
-There have been several questions from students, faculty, and staff on the topic of courses and curriculum in the UVA SDS Online MSDS Program. Given your knowledge of database design, you decide it will be helpful to construct a database containing some information about the courses. In particular, these things must be in the database:
-
-
-
-INSTRUCTIONS
-
-The project is divided into two parts, and you will submit your work separately for each part.
-The first project part involves understanding the problem and uses cases, and designing a relational database to support the needs. The second project part involves database buildout and query construction and testing.  
-You can use any of several drawing programs to create an Entity Relationship Diagram for the design section.  One such tool is dbdiagram.io, and another popular tool is LucidChart.com
-
-
-Data: included in this project package
-
-
 PART 1
 Part 1 of the assignment is to understand the problem and design the database.
 You will then answer the following Design Questions and submit your responses.
@@ -22,7 +6,8 @@ Part 1 Total Points: 20
 
 Design Questions
 
-1) (3 PTS) What tables should you build?  There are a variety of tabs in the excel sheet with tabs having courses, terms, and instructors. There are learning outcomes for each course. With that, we will want to build tables for: Courses, Instructors, Learning Outcomes and CourseAssignments that 
+### 1) (3 PTS) What tables should you build?  
+There are a variety of tabs in the excel sheet with tabs having courses, terms, and instructors. There are learning outcomes for each course. With that, we will want to build tables for: Courses, Instructors, Learning Outcomes and CourseAssignments that 
 shows which insructors to teach a course in each term. 
 
 2) (2 PTS) For each table, what field(s) will you use for primary key?  For the tables we will use the following primary keys: Courses = course_id; Learning_Outcomes = lo_id; Instructors = insturctor=id; CourseAssisgnments = assignment_id
