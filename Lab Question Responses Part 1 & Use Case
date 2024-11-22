@@ -1,4 +1,4 @@
-PART 1
+# PART 1
 Part 1 of the assignment is to understand the problem and design the database.
 You will then answer the following Design Questions and submit your responses.
 
@@ -10,32 +10,35 @@ Design Questions
 There are a variety of tabs in the excel sheet with tabs having courses, terms, and instructors. There are learning outcomes for each course. With that, we will want to build tables for: Courses, Instructors, Learning Outcomes and CourseAssignments that 
 shows which insructors to teach a course in each term. 
 
-2) (2 PTS) For each table, what field(s) will you use for primary key?  For the tables we will use the following primary keys: Courses = course_id; Learning_Outcomes = lo_id; Instructors = insturctor=id; CourseAssisgnments = assignment_id
+### 2) (2 PTS) For each table, what field(s) will you use for primary key?  
+For the tables we will use the following primary keys: Courses = course_id; Learning_Outcomes = lo_id; Instructors = insturctor=id; CourseAssisgnments = assignment_id
 
-3) (2 PTS) For each table, what foreign keys will you use? LearningOutcomes: course_id (references Courses); CourseAssignments: course_id (references Courses), instructor_id (references Instructors)
+### 3) (2 PTS) For each table, what foreign keys will you use? 
+LearningOutcomes: course_id (references Courses); CourseAssignments: course_id (references Courses), instructor_id (references Instructors)
 
-4) (2 PTS) Learning outcomes, courses, and instructors need a flag to indicate if they are currently active or not. How will your database support this feature? In particular: If a course will be taught again, it will be flagged as active. If the course won’t be taught again, it will be flagged as inactive.
+### 4) (2 PTS) Learning outcomes, courses, and instructors need a flag to indicate if they are currently active or not. 
+How will your database support this feature? In particular: If a course will be taught again, it will be flagged as active. If the course won’t be taught again, it will be flagged as inactive.
 
-It is important to track if an instructor is a current employee or not. Learning outcomes for a course can change. You’ll want to track if a learning outcome is currently active or not.
+It is important to track if an instructor is a current employee or not. Learning outcomes for a course can change. We will want to track if a learning outcome is currently active or not.
 Will add an 'active' field to each table. 
 
-5) (1 PT) Is there anything to normalize in the database, and if so, how will you normalize it? Recall the desire to eliminate redundancy.  
+### 5) (1 PT) Is there anything to normalize in the database, and if so, how will you normalize it? Recall the desire to eliminate redundancy.  
 Will need to ensure that course infomration is not dublicated across tables. Reference course_id for learning outcomes and instructors course. 
 
-6) (1 PT) Are there indexes that you should build? Explain your reasoning. 
+### 6) (1 PT) Are there indexes that you should build? Explain your reasoning. 
 Will look at building indexes on foreign keys to improve query performance and indexes on 'active' fields to filter active. 
 
-7) (2 PTS) Are there constraints to enforce? Explain your answer and strategy.
+### 7) (2 PTS) Are there constraints to enforce? Explain your answer and strategy.
 For example, these actions should not be allowed:
 - Entering learning objectives for a course not offered by the School of Data Science
 - Assigning an invalid instructor to a course
 Yes, key foreign key contraints and ensureing learning outcomes are only entered for valid courses and insturctors. 
 
-8) (5 PTS) Draw and submit a Relational Model for your project. For an example, see Beginning Database Design Solutions page 115 Figure 5-28.
+### 8) (5 PTS) Draw and submit a Relational Model for your project. For an example, see Beginning Database Design Solutions page 115 Figure 5-28.
 
-I will have to reference page 115 Figure 5-28 to draw this.
+Reference page 115 Figure 5-28 to draw this.
 
-9) (2 PTS) Suppose you were asked if your database could also support the UVA SDS Residential MSDS Program. Explain any issues that might arise, changes to the database structure (schema), and new data that might be needed. 
+### 9) (2 PTS) Suppose you were asked if your database could also support the UVA SDS Residential MSDS Program. Explain any issues that might arise, changes to the database structure (schema), and new data that might be needed. 
 Note you won’t actually need to support this use case for the project.
 Yes to issues, they could have difference course structures, additional terms or different instructors. Would have to add a field to differentiate between online and residential. 
 
@@ -45,15 +48,15 @@ good engineer/developer would have addressed this need during the planning stage
 
 
 
-PART 2
+# PART 2
 Part 2 of the assignment is to build the database, insert all data, and write SQL queries to answer use case questions. We will be using DBT to insert our initial seed data, and write SQL statement to transform it.  
 Instead of a database, we will use Snowflake to store the data.
 
 Your submitted file must include:
-1) (6 PTS) Loading the provided data into DBT as seed files
+### 1) (6 PTS) Loading the provided data into DBT as seed files
 This is the "Data Build Tool" -- There is DBT cloud and DBT Core. 
 
-2) (14 PTS; broken out below) SQL queries to answer User Case Questions, with resulting output
+### 2) (14 PTS; broken out below) SQL queries to answer User Case Questions, with resulting output
 
 Note: it is good practice to save ALL code in files so it can be replicated and edited as needed.
 
@@ -65,26 +68,26 @@ Use Case Questions
 After building and populating your database, you will write SQL queries to answer the questions below.
 Include your SQL code and results in your submitted file.
 
-1) (1 PT) Which courses are currently included (active) in the program? Include the course mnemonic and course name for each.
+### 1) (1 PT) Which courses are currently included (active) in the program? Include the course mnemonic and course name for each.
 
-2) (1 PT) Which courses were included in the program, but are no longer active? Include the course mnemonic and course name for each.
+### 2) (1 PT) Which courses were included in the program, but are no longer active? Include the course mnemonic and course name for each.
 
-3) (1 PT) Which instructors are not current employees?
+### 3) (1 PT) Which instructors are not current employees?
 
-4) (1 PT) For each course (active and inactive), how many learning outcomes are there?
+### 4) (1 PT) For each course (active and inactive), how many learning outcomes are there?
 
-5) (2 PTS) Are there any courses with no learning outcomes? If so, provide their mnemonics and names.
+### 5) (2 PTS) Are there any courses with no learning outcomes? If so, provide their mnemonics and names.
 
-6) (2 PTS) Which courses include SQL as a learning outcome? Include the learning outcome descriptions, course mnemonics, and course names in your solution.
+### 6) (2 PTS) Which courses include SQL as a learning outcome? Include the learning outcome descriptions, course mnemonics, and course names in your solution.
 
-7) (1 PT) Who taught course ds5100 in Summer 2021?
+### 7) (1 PT) Who taught course ds5100 in Summer 2021?
 
-8) (1 PT) Which instructors taught in Fall 2021? Order their names alphabetically, making sure the names are unique.
+### 8) (1 PT) Which instructors taught in Fall 2021? Order their names alphabetically, making sure the names are unique.
 
-9) (1 PT) How many courses did each instructor teach in each term? Order your results by term and then instructor.
+### 9) (1 PT) How many courses did each instructor teach in each term? Order your results by term and then instructor.
 
-10a) (2 PTS) Which courses had more than one instructor for the same term? Provide the mnemonic and term for each. Note this occurs in courses with multiple sections.
+### 10a) (2 PTS) Which courses had more than one instructor for the same term? Provide the mnemonic and term for each. Note this occurs in courses with multiple sections.
 
-10b) (1 PT) For courses with multiple sections, provide the term, course mnemonic, and instructor name for each. Hint: You can use your result from 10a in a subquery or WITH clause.
+### 10b) (1 PT) For courses with multiple sections, provide the term, course mnemonic, and instructor name for each. Hint: You can use your result from 10a in a subquery or WITH clause.
 
 Note: Question 10 is good preparation for SQL interview questions.
