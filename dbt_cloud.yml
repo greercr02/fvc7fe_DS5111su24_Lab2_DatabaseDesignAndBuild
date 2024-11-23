@@ -1,0 +1,14 @@
+version: "1"
+context:
+  active-host: "hx975.us1.dbt.com"
+  active-project: "70471823402407"
+projects:
+  - project-name: "Analytics"
+    project-id: "70471823402407"
+    account-name: "University of Virginia"
+    account-id: "70471823401510"
+    account-host: "hx975.us1.dbt.com"
+    token-name: "cloud-cli-dd8c"
+    token-value: "dbtu_24b9ZgERQl-6NyOBjvO0TauutBVujV4nsrkzhHm8fA199fM1dI"
+
+
